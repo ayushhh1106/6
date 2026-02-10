@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Always You ❤️</title>
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+height:100vh;
+background:radial-gradient(circle at top,#0b0f2b,#020314);
+overflow:hidden;
+font-family:'Inter',sans-serif;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* STARS */
+.star{
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite ease-in-out;
+}
+@keyframes twinkle{
+0%,100%{opacity:.3}
+50%{opacity:1}
+}
+
+/* CARD */
+.card{
+width:94%;
+max-width:860px;
+padding:45px;
+border-radius:26px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+box-shadow:0 30px 80px rgba(0,0,0,.6);
+text-align:center;
+z-index:2;
+}
+
+/* HEADINGS */
+h1{
+font-family:'Playfair Display',serif;
+font-size:42px;
+color:#ff5ca8;
+margin-bottom:10px;
+}
+h2{
+font-weight:300;
+margin-bottom:25px;
+}
+
+/* LETTER */
+#letter{
+font-family:'Playfair Display',serif;
+font-size:20px;
+line-height:2;
+min-height:260px;
+}
+
+/* BUTTONS */
+button{
+margin-top:25px;
+padding:14px 34px;
+border:none;
+border-radius:40px;
+background:#ff2e88;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.35s;
+}
+button:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px rgba(255,46,136,.7);
+}
+
+/* REASONS */
+#reason{
+margin-top:20px;
+font-size:18px;
+color:#ffb3d9;
+font-weight:500;
+}
+
+/* HEARTS */
+.heart{
+position:absolute;
+bottom:-20px;
+color:#ff4da6;
+animation:float linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-110vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+
+<h1>Always You 💍</h1>
+<h2>Meri Soan Papdi ❤️</h2>
+
+<p id="letter"></p>
+
+<button onclick="nextReason()">Why I Love You 💖</button>
+<div id="reason"></div>
+
+<button onclick="finalQuestion()" style="margin-top:15px;">One Last Question 🥺</button>
+
+</div>
+
+<script>
+
+/* STARS */
+for(let i=0;i<120;i++){
+const s=document.createElement("div");
+s.classList.add("star");
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.animationDelay=Math.random()*2+"s";
+document.body.appendChild(s);
+}
+
+/* TYPEWRITER */
+const text=`Meri pyari Soan Papdi ❤️,
+
+
+Aaj Promise Day par main tumse bade-bade vaade nahi karna chahta… 
+bas woh jo dil se nikalte hain aur hamesha sach rehte hain. 
+
+Main promise karta hoon ki life ke har mod par tumhara haath pakad kar chalunga — 
+chahe raasta easy ho ya thoda mushkil.
+
+Jab tum khush hogi, main tumhari khushi ko celebrate karunga,  
+aur jab kabhi tumhari aankhon mein nami hogi,  
+to sabse pehle usse mehsoos karne wala insaan main hi rahunga.
+
+Main yeh promise nahi karta ki humari life perfect hogi,  
+lekin yeh zaroor promise karta hoon ki **humari story hamesha real hogi 
+efforts se bhari hogi, aur pyaar se aur bhi zyada beautiful banegi.
+
+Tum sirf meri girlfriend nahi ho
+tum meri aadat ho, meri shanti ho, aur meri har dua ka sabse khoobsurat jawab ho.
+
+Aur mera sabse bada promise   
+Har naye din ke saath main tumse thoda aur zyada pyaar karunga.
+
+It’s always you…  
+kal bhi, aaj bhi, aur forever 💍❤️`;
+
+let i=0;
+function type(){
+if(i<text.length){
+document.getElementById("letter").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,28);
+}
+}
+type();
+
+/* MUSIC AUTOPLAY */
+setTimeout(()=>document.getElementById("music").play(),1200);
+
+/* REASONS */
+const reasons=[
+"Tum meri peace ho 🌙",
+"Tum meri smile ka reason ho 😊",
+"Tum mere liye home ho 🏡",
+"Tum bina bole samajh jaati ho 🫶",
+"Tum meri strongest feeling ho ❤️",
+"Tum meri future ho 💍"
+];
+let r=0;
+function nextReason(){
+document.getElementById("reason").innerText=reasons[r%reasons.length];
+r++;
+}
+
+/* FINAL QUESTION */
+function finalQuestion(){
+document.body.innerHTML=`
+<div style="text-align:center;color:white;">
+<h1 style="font-family:Playfair Display;color:#ff5ca8;">Will you always be mine? 💍</h1>
+<p style="margin-top:15px;font-size:20px;">Because my forever already chose you ❤️</p>
+</div>`;
+}
+
+/* HEARTS */
+function heart(){
+const h=document.createElement("div");
+h.classList.add("heart");
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(Math.random()*20+12)+"px";
+h.style.animationDuration=(Math.random()*10+7)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+}
+setInterval(heart,300);
+
+</script>
+
+</body>
+</html>
