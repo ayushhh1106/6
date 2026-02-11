@@ -3,220 +3,292 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Always You ❤️</title>
+<title>For My Soan Papdi ❤️</title>
 
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* CINEMATIC OPENING */
+
+.intro{
+position:fixed;
+height:100vh;
+width:100%;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+z-index:999;
+animation:fadeOut 3s ease forwards;
+animation-delay:4s;
+}
+
+.intro h1{
+font-family:'Great Vibes',cursive;
+font-size:60px;
+letter-spacing:3px;
+animation:zoom 4s ease;
+}
+
+@keyframes zoom{
+0%{transform:scale(0.5);opacity:0;}
+100%{transform:scale(1);opacity:1;}
+}
+
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* MAIN PAGE */
 
 body{
 height:100vh;
-background:radial-gradient(circle at top,#0b0f2b,#020314);
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#a18cd1);
+background-size:400% 400%;
+animation:bgMove 12s infinite;
 overflow:hidden;
-font-family:'Inter',sans-serif;
-color:white;
 display:flex;
 justify-content:center;
 align-items:center;
 }
 
-/* STARS */
-.star{
-position:absolute;
-width:2px;
-height:2px;
-background:white;
-border-radius:50%;
-animation:twinkle 2s infinite ease-in-out;
-}
-@keyframes twinkle{
-0%,100%{opacity:.3}
-50%{opacity:1}
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-/* CARD */
 .card{
-width:94%;
-max-width:860px;
-padding:45px;
-border-radius:26px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-box-shadow:0 30px 80px rgba(0,0,0,.6);
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(25px);
+border-radius:30px;
+padding:50px;
 text-align:center;
-z-index:2;
+width:90%;
+max-width:800px;
+box-shadow:0 0 60px rgba(0,0,0,0.3);
+color:white;
+animation:fadeIn 2s ease;
 }
 
-/* HEADINGS */
-h1{
-font-family:'Playfair Display',serif;
-font-size:42px;
-color:#ff5ca8;
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(40px);}
+to{opacity:1;}
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:40px;
 margin-bottom:10px;
 }
-h2{
-font-weight:300;
-margin-bottom:25px;
+
+.hug{
+font-size:10px;
+animation:heartbeat 1.6s infinite;
 }
 
-/* LETTER */
-#letter{
-font-family:'Playfair Display',serif;
-font-size:20px;
-line-height:2;
-min-height:260px;
+@keyframes heartbeat{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.25);}
 }
 
-/* BUTTONS */
+.message{
+margin-top:14px;
+line-height:1.8;
+font-size:13px;
+}
+
+/* BUTTON */
+
 button{
-margin-top:25px;
-padding:14px 34px;
+margin-top:30px;
+padding:16px 40px;
 border:none;
 border-radius:40px;
-background:#ff2e88;
-color:white;
-font-size:16px;
+font-size:17px;
+font-weight:600;
 cursor:pointer;
-transition:.35s;
+background:white;
+color:#ff4e91;
+transition:.4s;
+box-shadow:0 0 25px rgba(255,255,255,0.8);
 }
+
 button:hover{
-transform:scale(1.1);
-box-shadow:0 0 25px rgba(255,46,136,.7);
+transform:scale(1.12);
+background:#ff4e91;
+color:white;
 }
 
-/* REASONS */
-#reason{
-margin-top:20px;
-font-size:18px;
-color:#ffb3d9;
-font-weight:500;
+/* SECRET MESSAGE */
+
+.secret{
+margin-top:25px;
+display:none;
+font-size:22px;
+font-weight:600;
+animation:fadeIn 2s;
 }
 
-/* HEARTS */
+/* FLOATING HEARTS */
+
 .heart{
 position:absolute;
-bottom:-20px;
-color:#ff4da6;
+color:white;
+font-size:22px;
 animation:float linear infinite;
+opacity:.7;
 }
+
 @keyframes float{
-0%{transform:translateY(0);opacity:1}
-100%{transform:translateY(-110vh);opacity:0}
+0%{transform:translateY(100vh) scale(0);}
+100%{transform:translateY(-10vh) scale(1.6);}
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio id="music" loop>
-<source src="music.mp3" type="audio/mpeg">
+<!-- OPENING -->
+<div class="intro">
+<h1>For My Forever Love ❤️</h1>
+<p>Close your eyes... and feel my hug🫂</p>
+</div>
+
+
+<!-- MUSIC (replace with your song if you want) -->
+<audio autoplay loop>
+<source src="https://open.spotify.com/track/0B5CyJjwpoah3uO3FkODCb?si=9b3d557e3eb8494a">
 </audio>
+
+
+<!-- MAIN CARD -->
 
 <div class="card">
 
-<h1>Always You 💍</h1>
-<h2>Meri Soan Papdi ❤️</h2>
+<div class="title">Happy Hug Day Soan Papdi 💖</div>
 
-<p id="letter"></p>
+<div class="message">
+Meri pyari Babu ❤️,<br>
+<div class="message">
+Meri sabse pyari Soan Papdi ❤️,<br>
 
-<button onclick="nextReason()">Why I Love You 💖</button>
-<div id="reason"></div>
+Kabhi notice kiya hai… life kitni fast chalti rehti hai? ⏳  
+Sab kuch change hota rehta hai — din, waqt, log, situations…  
+Par ek cheez hai jo kabhi change nahi hoti —<b>mera tumhare liye feel karna 💋</b>
 
-<button onclick="finalQuestion()" style="margin-top:15px;">One Last Question 🥺</button>
+Sach kahu… jab tum meri life mein aayi na,  
+tab mujhe samajh aaya ki “home” koi place nahi hota…  
+<b>Home ek person hota hai</b>
+Aur mera home tum ho 🏡💗  
+
+Tumhe hug karna mere liye sirf close aana nahi hai…  
+yeh woh moment hota hai jab mera mind slow ho jaata hai,  
+heartbeat steady ho jaati hai 💓  
+aur andar se ek ajeeb sa sukoon milta hai… jaise sab kuch finally theek ho gaya ho ✨  
+
+Us ek hug mein na jaane kitni baatein hoti hain 
+care bhi, protection bhi, love bhi… aur ek silent promise bhi 🤞❤️  
+
+Promise ki chahe life kitni bhi messy ho jaaye 
+main hamesha tumhare saath khada rahunga.  
+
+Agar kabhi tum strong banne ki acting karte karte thak jao…  
+toh bas mere paas aa jaana.  
+Main tumhe itna tight hug karunga 🤗  
+ki tumhe yaad aa jaaye —  
+**tumhe sab kuch alone handle nahi karna.**  
+
+Aur pata hai mujhe tumhari sabse beautiful baat kya lagti hai?  
+Tumhari presence.  
+
+Tum kuch special karo ya na karo…  
+tum bas paas ho — itna hi mere liye enough hai 🥺❤️  
+
+Mujhe perfect relationship nahi chahiye…  
+Mujhe woh chahiye jahan hum imperfect hoke bhi ek dusre ko choose karein.  
+Har baar. Har situation mein. 💞  
+
+Future ke baare mein sochta hoon toh flashy cheezein imagine nahi karta…  
+Main bas imagine karta hoon —  
+
+Ek long day ke baad tumhe hug karna…  
+Random nights par baatein karna 🌙  
+Choti choti cheezon par hasna 😄  
+Aur bina reason ek dusre ke aur close aa jaana ❤️  
+
+Because honestly…  
+Meri happiness ka koi complicated formula nahi hai.
+
+<b>👉 Tumhara haath mere haath mein 🤝  
+👉 Tumhara head meri shoulder par 🥺  
+👉 Aur ek long warm hug… 🤗 </b> 
+
+Bas… wahi meri perfect life hai.  
+
+Agar kabhi aisa moment aaye jahan tumhe lage ki duniya heavy ho gayi hai…  
+toh meri baahon ko yaad karna.  
+Main chahta hoon meri hug tumhare liye ek safe world ban jaaye 🌍💗  
+jahan tum bina fear ke bas “tum” reh sako.  
+
+So today, Hug Day par…  
+thodi der ke liye eyes close karo 😌  
+
+Aur imagine karo —  
+main tumhe apni baahon mein le raha hoon,  
+jaise tum meri sabse precious cheez ho…  
+jaise main tumhe kabhi hurt hone hi nahi dunga.  
+
+Kyuki meri nazar mein tum sirf meri love story ka part nahi ho…  
+**tum meri life ki sabse beautiful feeling ho.❤️✨  
+
+Aur agar mujhe life dobara start karne ka chance mile na…  
+toh har baar, bina doubt, bina pause —  
+
+<b>Main tumhe hi choose karunga 💍❤️</b>
+</div>
 
 </div>
 
+<button onclick="revealLove()">Tap For Infinite Hug 💕</button>
+
+<div class="secret" id="secret">
+Come here... 🤗<br>
+🫂Sending the tightest hug in the universe🫂
+</div>
+
+</div>
+
+
 <script>
 
-/* STARS */
-for(let i=0;i<120;i++){
-const s=document.createElement("div");
-s.classList.add("star");
-s.style.left=Math.random()*100+"vw";
-s.style.top=Math.random()*100+"vh";
-s.style.animationDelay=Math.random()*2+"s";
-document.body.appendChild(s);
+function revealLove(){
+document.getElementById("secret").style.display="block";
 }
 
-/* TYPEWRITER */
-const text=`Meri pyari Soan Papdi ❤️,
-
-
-Aaj Promise Day par main tumse bade-bade vaade nahi karna chahta… 
-bas woh jo dil se nikalte hain aur hamesha sach rehte hain. 
-
-Main promise karta hoon ki life ke har mod par tumhara haath pakad kar chalunga — 
-chahe raasta easy ho ya thoda mushkil.
-
-Jab tum khush hogi, main tumhari khushi ko celebrate karunga,  
-aur jab kabhi tumhari aankhon mein nami hogi,  
-to sabse pehle usse mehsoos karne wala insaan main hi rahunga.
-
-Main yeh promise nahi karta ki humari life perfect hogi,  
-lekin yeh zaroor promise karta hoon ki **humari story hamesha real hogi 
-efforts se bhari hogi, aur pyaar se aur bhi zyada beautiful banegi.
-
-Tum sirf meri girlfriend nahi ho
-tum meri aadat ho, meri shanti ho, aur meri har dua ka sabse khoobsurat jawab ho.
-
-Aur mera sabse bada promise   
-Har naye din ke saath main tumse thoda aur zyada pyaar karunga.
-
-It’s always you…  
-kal bhi, aaj bhi, aur forever 💍❤️`;
-
-let i=0;
-function type(){
-if(i<text.length){
-document.getElementById("letter").innerHTML+=text.charAt(i);
-i++;
-setTimeout(type,28);
+// Floating hearts generator
+for(let i=0;i<35;i++){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💗";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(5+Math.random()*6)+"s";
+document.body.appendChild(heart);
 }
-}
-type();
-
-/* MUSIC AUTOPLAY */
-setTimeout(()=>document.getElementById("music").play(),1200);
-
-/* REASONS */
-const reasons=[
-"Tum meri peace ho 🌙",
-"Tum meri smile ka reason ho 😊",
-"Tum mere liye home ho 🏡",
-"Tum bina bole samajh jaati ho 🫶",
-"Tum meri strongest feeling ho ❤️",
-"Tum meri future ho 💍"
-];
-let r=0;
-function nextReason(){
-document.getElementById("reason").innerText=reasons[r%reasons.length];
-r++;
-}
-
-/* FINAL QUESTION */
-function finalQuestion(){
-document.body.innerHTML=`
-<div style="text-align:center;color:white;">
-<h1 style="font-family:Playfair Display;color:#ff5ca8;">Will you always be mine? 💍</h1>
-<p style="margin-top:15px;font-size:20px;">Because my forever already chose you ❤️</p>
-</div>`;
-}
-
-/* HEARTS */
-function heart(){
-const h=document.createElement("div");
-h.classList.add("heart");
-h.innerHTML="❤️";
-h.style.left=Math.random()*100+"vw";
-h.style.fontSize=(Math.random()*20+12)+"px";
-h.style.animationDuration=(Math.random()*10+7)+"s";
-document.body.appendChild(h);
-setTimeout(()=>h.remove(),6000);
-}
-setInterval(heart,300);
 
 </script>
 
